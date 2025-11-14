@@ -1,6 +1,6 @@
 // src/pages/Projects.tsx
 const works = [
-  { title: 'Portfolio Site', detail: 'React + Vite で個人サイトを構築' },
+  { title: 'Portfolio Site', detail: 'Vite + React + TypeScript で個人サイトを構築。見た目の部分はTailwind + shadcn/ui' },
   { title: 'WIP', detail: '作成中' },
 ]
 

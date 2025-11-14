@@ -2,7 +2,7 @@
 export default function Home() {
   return (
     <section>
-      <h1>Hi, I’m Ksin</h1>
+      <h1 className="text-4xl text-blue-500">Hi, I’m Ksin</h1>
       <p>こんにちは。しがないSEです。</p>
     </section>
   )
