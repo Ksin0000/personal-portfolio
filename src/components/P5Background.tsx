@@ -9,7 +9,9 @@ const P5Background: React.FC = () => {
     if (!containerRef.current) return;
 
     const sketch = (p: p5) => {
-      // ここで背景アニメーションを定義
+      let userX = p.windowWidth / 2;
+      let userY = p.windowHeight / 2;
+      
       p.setup = () => {
         p.createCanvas(window.innerWidth, window.innerHeight).parent(containerRef.current!);
       };
@@ -19,22 +21,17 @@ const P5Background: React.FC = () => {
       };
 
       p.draw = () => {
-        // 好きな背景に変えてOK
-        p.background(255); // 濃い紺色
+        userX = userX + Math.trunc((p.mouseX - userX) / 10);
+        userY = userY + Math.trunc((p.mouseY - userY) / 10);
 
-        p.noStroke();
-        const t = p.millis() * 0.001;
-
-        // シンプルな動く円のパターン例
-        for (let i = 0; i < 40; i++) {
-          const angle = (i / 40) * p.TWO_PI + t * 0.3;
-          const radius = 100 + 40 * p.sin(t + i);
-          const x = p.width / 2 + radius * p.cos(angle);
-          const y = p.height / 2 + radius * p.sin(angle);
-
-          const alpha = 80 + 40 * p.sin(t * 2 + i);
-          p.fill(80, 190, 255, alpha); // 青系の光る点
-          p.circle(x, y, 10);
+        for (let wi = 0; wi < window.innerWidth; wi+=10) {
+            for (let hi = 0; hi < window.innerHeight; hi+=10) {
+                p.stroke(200);
+                if (p.abs(wi-userX)<30 || p.abs(hi-userY)<30 ){
+                    p.stroke(0);
+                }
+                p.point(wi, hi);
+            }
         }
       };
     };
