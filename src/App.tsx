@@ -15,6 +15,7 @@ const navItems = [
   { title: 'Projects', href: '/projects' },
   { title: 'Career', href: '/career' },
   { title: 'Contact', href: '/contact' },
+  { title: 'Background', href: '/background' },
 ] as const
 
 

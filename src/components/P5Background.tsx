@@ -20,7 +20,7 @@ const P5Background: React.FC = () => {
 
       p.draw = () => {
         // 好きな背景に変えてOK
-        p.background(15, 18, 40); // 濃い紺色
+        p.background(255); // 濃い紺色
 
         p.noStroke();
         const t = p.millis() * 0.001;
