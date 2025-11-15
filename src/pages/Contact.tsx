@@ -1,6 +1,5 @@
 import { ArrowUpRight, Github, MessageCircle } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
@@ -8,7 +7,7 @@ const contactChannels = [
   {
     label: 'GitHub',
     value: '@Ksin0000',
-    description: 'Issue や DM での相談はできる限り 24h 以内に返信します。',
+    description: '個人アカウントです。',
     href: 'https://github.com/Ksin0000',
     icon: Github,
     available: true,
@@ -16,14 +15,12 @@ const contactChannels = [
   {
     label: 'Contact Form',
     value: '準備中',
-    description: 'Notion フォームを準備中。公開までは GitHub からご連絡ください。',
+    description: 'フォームを準備中。公開までは GitHub からご連絡ください。',
     href: undefined,
     icon: MessageCircle,
     available: false,
   },
 ]
-
-const availabilities = ['フルリモート', 'スポット相談', 'UI Revamp', 'データ分析サポート']
 
 export default function Contact() {
   return (
@@ -67,20 +64,6 @@ export default function Contact() {
           )
         })}
       </div>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Currently Open For</CardTitle>
-          <CardDescription>短期リソースや UI リフレッシュのご相談が多めです。</CardDescription>
-        </CardHeader>
-        <CardContent className="flex flex-wrap gap-2">
-          {availabilities.map((item) => (
-            <Badge key={item} variant="secondary">
-              {item}
-            </Badge>
-          ))}
-        </CardContent>
-      </Card>
     </section>
   )
 }

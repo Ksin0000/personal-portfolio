@@ -24,8 +24,6 @@ const history = [
   },
 ]
 
-const focusAreas = ['shadcn/ui', 'TypeScript', 'Data Science', 'LLM Ops', 'Mentoring']
-
 export default function Career() {
   return (
     <section className="space-y-8">
@@ -55,19 +53,6 @@ export default function Career() {
           </div>
         ))}
       </div>
-
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-lg">Focus Areas</CardTitle>
-        </CardHeader>
-        <CardContent className="flex flex-wrap gap-2">
-          {focusAreas.map((area) => (
-            <Badge key={area} variant="secondary">
-              {area}
-            </Badge>
-          ))}
-        </CardContent>
-      </Card>
     </section>
   )
 }

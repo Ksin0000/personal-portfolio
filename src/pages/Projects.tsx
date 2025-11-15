@@ -8,7 +8,7 @@ type Work = {
   title: string
   detail: string
   stack: string[]
-  status: '公開中' | 'WIP'
+  status: 'Private' | 'Public'
   link?: string
 }
 
@@ -16,15 +16,9 @@ const works: Work[] = [
   {
     title: 'Portfolio Site',
     detail: 'Vite + React + TypeScript で個人サイトを構築。Tailwind + shadcn/ui でデザインシステムを共通化。',
-    stack: ['React', 'Vite', 'shadcn/ui'],
-    status: '公開中',
+    stack: ['React', 'Vite', 'Tailwind', 'shadcn/ui', 'TypeScript', 'Cloudflare'],
+    status: 'Public',
     link: 'https://github.com/Ksin0000/personal-portfolio',
-  },
-  {
-    title: 'WIP',
-    detail: '作成中。データ分析基盤とUIダッシュボードを行き来できるスターターキットを検討中です。',
-    stack: ['LLM Ops', 'Supabase', 'Visualization'],
-    status: 'WIP',
   },
 ]
 
@@ -34,7 +28,7 @@ export default function Projects() {
       <div className="space-y-2">
         <h1 className="text-3xl font-semibold tracking-tight">Projects</h1>
         <p className="text-muted-foreground">
-          shadcn/ui を活用した UI リファインや、データ×Web の掛け合わせ案件を中心に取り組んでいます。
+          公開可能な制作物をまとめています。
         </p>
       </div>
       <div className="grid gap-6 md:grid-cols-2">
@@ -43,7 +37,7 @@ export default function Projects() {
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle className="text-2xl">{work.title}</CardTitle>
-                <Badge variant={work.status === '公開中' ? 'default' : 'secondary'}>{work.status}</Badge>
+                <Badge variant={work.status === 'Public' ? 'default' : 'secondary'}>{work.status}</Badge>
               </div>
               <CardDescription>{work.detail}</CardDescription>
             </CardHeader>
@@ -57,8 +51,8 @@ export default function Projects() {
                 ))}
               </div>
             </CardContent>
-            <CardFooter className="mt-auto">
-              {work.link ? (
+            <CardFooter className="mt-auto min-h-[48px]">
+              {work.status === 'Public' && work.link ? (
                 <Button asChild className="gap-2">
                   <a href={work.link} target="_blank" rel="noreferrer">
                     リポジトリを見る
@@ -66,10 +60,7 @@ export default function Projects() {
                   </a>
                 </Button>
               ) : (
-                <Button className="gap-2" variant="outline" disabled>
-                  近日公開
-                  <ArrowUpRight className="h-4 w-4" />
-                </Button>
+                <p className="text-sm text-muted-foreground">Private repository</p>
               )}
             </CardFooter>
           </Card>
