@@ -1,3 +1,4 @@
+import P5Background from "./components/P5Background";
 import { NavLink, Outlet } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import {
@@ -19,8 +20,9 @@ const navItems = [
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100 text-foreground dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
-      <div className="mx-auto flex min-h-screen max-w-5xl flex-col gap-8 px-4 py-10">
+    <div className="relative min-h-screen from-slate-50 via-white to-slate-100 text-foreground dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
+      <P5Background />
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col gap-8 px-4 py-10">
         <header className="rounded-3xl border bg-card/80 p-6 shadow-lg shadow-slate-200/50 backdrop-blur dark:shadow-none">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
