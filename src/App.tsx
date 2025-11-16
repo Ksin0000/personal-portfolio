@@ -62,7 +62,7 @@ export default function App() {
           <Outlet />
         </main>
         <footer className="pb-6 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Ksin — Crafting calm, human-friendly products.
+          © {new Date().getFullYear()} Ksin.
         </footer>
       </div>
     </div>
