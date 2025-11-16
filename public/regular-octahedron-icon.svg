@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="regular octahedron icon">
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8de1ff" />
+      <stop offset="100%" stop-color="#3fa9f5" />
+    </linearGradient>
+    <linearGradient id="bottom" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f3b66" />
+      <stop offset="100%" stop-color="#1c6fb7" />
+    </linearGradient>
+  </defs>
+  <polygon points="50 5, 95 50, 50 95, 5 50" fill="url(#top)" />
+  <polygon points="50 5, 50 95, 95 50" fill="#1e5f9f" opacity="0.3" />
+  <polygon points="50 5, 5 50, 50 95" fill="#ffffff" opacity="0.2" />
+  <polygon points="50 95, 95 50, 5 50" fill="url(#bottom)" />
+  <polygon points="50 95, 95 50, 50 5" fill="#000000" opacity="0.12" />
+</svg>
